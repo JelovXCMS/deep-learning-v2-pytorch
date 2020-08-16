@@ -161,3 +161,8 @@ jupyter notebook
 ```
 
 To exit the environment when you have completed your work session, simply close the terminal window.
+
+
+## install cuda with pytorch ,
+https://medium.com/datadriveninvestor/installing-pytorch-and-tensorflow-with-cuda-enabled-gpu-f747e6924779
+(not sucess)
