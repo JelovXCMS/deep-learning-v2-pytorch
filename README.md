@@ -166,3 +166,23 @@ To exit the environment when you have completed your work session, simply close 
 ## install cuda with pytorch ,
 https://medium.com/datadriveninvestor/installing-pytorch-and-tensorflow-with-cuda-enabled-gpu-f747e6924779
 (not sucess)
+
+try this : (also notice for the version)
+issue fixed for me
+
+windows 10
+GPU 940 MAX
+CUDA 9.0
+
+installed CUDA tool kit https://developer.nvidia.com/cuda-downloads
+replaced CUDANN libraries https://developer.nvidia.com/cudnn
+
+Check if your CUDA_HOME, CUDA_PATH & CUDA_PATH_V8 is set up properly. If not add it.
+
+then re install pytorch with cuda 90 compatibility https://pytorch.org/
+
+......................................................................>
+torch.cuda.is_available()
+True
+
+ref: https://medium.com/@viveksingh.heritage/how-to-install-tensorflow-gpu-version-with-jupyter-windows-10-in-8-easy-steps-8797547028a4
