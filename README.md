@@ -164,25 +164,41 @@ To exit the environment when you have completed your work session, simply close 
 
 
 ## install cuda with pytorch ,
+follow this,
 https://medium.com/datadriveninvestor/installing-pytorch-and-tensorflow-with-cuda-enabled-gpu-f747e6924779
-(not sucess)
 
-try this : (also notice for the version)
-issue fixed for me
+1. Download visual studio 17 with some workloads and components indicated in the article.
+2. Check PyTorch support CUDA version at https://pytorch.org/ (ex: 10.2 , with command "conda install pytorch torchvision cudatoolkit=10.2 -c pytorch") 
+3. Install CUDA Toolkit with supported version https://developer.nvidia.com/cuda-toolkit-archive
+4. Install(update) Nvida GPU drivers https://www.nvidia.com/Download/index.aspx
+5. download cudnn https://developer.nvidia.com/cudnn , copy the content to folder "...../CUDA/version/"
+6. Setting enviroment variables for CUDA, include, \bin, \libnvvp, \lib, NVidia Corporation\Nvidia  NvDLISR , 
+7. install Anaconda 
+8. install git, conda install git
+9. create enviorment for pytorch :
+```
+    conda create --name deep-learning python=3.7 
+    activate deep-learning
+```
+10. install pytorch , command from step 2
+11. install other require packages via 
+```
+pip install -r requirements.txt
+```
+12. open jupyter notebook (active this enviorment first)
+```
+jupyter notebook
+```
+13. check cuda (in python or notebook):
+```
+import torch
+torch.cuda.is_available()
+```
 
-windows 10
-GPU 940 MAX
-CUDA 9.0
 
-installed CUDA tool kit https://developer.nvidia.com/cuda-downloads
-replaced CUDANN libraries https://developer.nvidia.com/cudnn
-
+other info for  debug 
 Check if your CUDA_HOME, CUDA_PATH & CUDA_PATH_V8 is set up properly. If not add it.
 
 then re install pytorch with cuda 90 compatibility https://pytorch.org/
-
-......................................................................>
-torch.cuda.is_available()
-True
 
 ref: https://medium.com/@viveksingh.heritage/how-to-install-tensorflow-gpu-version-with-jupyter-windows-10-in-8-easy-steps-8797547028a4
